@@ -1,6 +1,3 @@
-# SIEM-Wazuh
-Monitoramento Wazuh
-
 # 🔐 Projeto SIEM com Wazuh
 
 ## 📖 Visão Geral
@@ -13,7 +10,7 @@ O laboratório foi desenvolvido em ambiente virtual com o objetivo de simular at
 
 ## 🎯 Objetivos
 
-* Monitorar logs de sistemas Windows
+* Monitorar logs de sistemas Linux
 * Detectar ataques de força bruta (SSH)
 * Gerar alertas em tempo real
 * Analisar eventos de segurança através de dashboards
@@ -32,12 +29,53 @@ O laboratório foi desenvolvido em ambiente virtual com o objetivo de simular at
 
 O ambiente foi estruturado da seguinte forma:
 
-* 1 Servidor SIEM (Wazuh)
-* 1 Máquina alvo (Windows com SSH ativo)
+* 1 Servidor SIEM (Wazuh + Elasticsearch + Kibana)
+* 1 Máquina alvo (Linux com SSH ativo)
 * Rede interna para simulação de ataques
 
 📌 *Imagem da arquitetura disponível em:*
 `docs/arquitetura.png`
+
+---
+
+## 🖧 Infraestrutura de Rede (DHCP + NAT)
+
+O ambiente do laboratório SIEM foi projetado com segmentação de rede para simular cenários reais.
+
+### 🔧 Componentes
+
+* Servidor Ubuntu atuando como:
+
+  * DHCP Server
+  * Gateway (NAT)
+* Rede interna isolada para testes
+* Distribuição automática de IP para clientes
+
+### 🌐 Topologia
+
+* `enp0s3` → WAN (Internet)
+* `enp0s8` → LAN (192.168.10.0/24)
+
+### 📡 DHCP
+
+* Range: 192.168.10.10 - 192.168.10.50
+* Gateway: 192.168.10.1
+* DNS: 8.8.8.8 / 8.8.4.4
+
+### 🔁 NAT
+
+* Masquerade com iptables
+* Permite acesso à internet para clientes da LAN
+
+### 📊 Integração com SIEM
+
+Logs monitorados pelo Wazuh:
+
+* DHCP requests (DHCPDISCOVER)
+* DHCP leases (DHCPACK)
+* Possíveis comportamentos suspeitos na rede
+
+📄 Documentação completa: `docs/dhcp-server.md`
 
 ---
 
@@ -111,6 +149,20 @@ Exemplo de melhoria:
 O relatório detalhado do projeto pode ser acessado em:
 
 📎 `docs/relatorio.pdf`
+
+---
+
+## 🔐 Segurança das Informações
+
+Para garantir boas práticas de segurança, todos os dados sensíveis foram anonimizados neste projeto.
+
+Não são expostos:
+
+* Endereços IP públicos
+* Credenciais ou senhas
+* Informações pessoais do ambiente real
+
+Os dados apresentados são simulados ou pertencem a ambientes controlados de laboratório.
 
 ---
 
