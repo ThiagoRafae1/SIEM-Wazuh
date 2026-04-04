@@ -1,6 +1,4 @@
 
-Definição das interfaces WAN e LAN no servidor
-
 network:
   version: 2
   ethernets:
