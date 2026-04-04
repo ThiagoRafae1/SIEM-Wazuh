@@ -183,15 +183,6 @@ ping google.com
 
 ---
 
-## 📎 Possíveis Melhorias
-
-- Implementar firewall com regras mais restritivas
-- Integrar com proxy transparente (Squid + e2guardian)
-- Monitoramento com Wazuh mais detalhado
-- Logs centralizados do DHCP
-
----
-
 ## 👨‍💻 Autor
 Projeto desenvolvido para fins de estudo e demonstração prática em ambiente de segurança da informação.
 
