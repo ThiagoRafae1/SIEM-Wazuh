@@ -1,0 +1,5 @@
+# instalação all in one
+
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+
+INFO: Installation finished.
