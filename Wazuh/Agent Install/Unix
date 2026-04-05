@@ -1,0 +1,9 @@
+#comando para instalação
+
+wget https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.4-1_amd64.deb && sudo WAZUH_MANAGER='192.168.10.1' WAZUH_AGENT_GROUP='Linux' WAZUH_AGENT_NAME='unu' dpkg -i ./wazuh-agent_4.14.4-1_amd64.deb
+
+#reinciar serviços
+
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
