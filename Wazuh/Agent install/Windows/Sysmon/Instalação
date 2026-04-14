@@ -1,0 +1,20 @@
+# Site para download do Sysmon
+https://learn.microsoft.com/pt-br/sysinternals/downloads/sysmon
+
+#Comando para instalação
+C:\Users\win11\Downloads\Sysmon> .\Sysmon64.exe -accepteula -i .\config.xml
+
+System Monitor v15.20 - System activity monitor
+By Mark Russinovich and Thomas Garnier
+Copyright (C) 2014-2026 Microsoft Corporation
+Using libxm12. libxml2 is Copyright (C) 1998-2012 Daniel Veillard. All Rights Reserved.
+Sysinternals - www.sysinternals.com
+Loading configuration file with schema version 4.90
+Sysmon schema version: 4.91
+Configuration file validated.
+Sysmon64 installed.
+SysmonDrv installed.
+Starting SysmonDrv.
+SysmonDrv started.
+Starting Sysmon64 ..
+Sysmon64 started.
