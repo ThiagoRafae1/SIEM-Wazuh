@@ -1,0 +1,7 @@
+#Comando para instalar Wazuh agent
+
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.4-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='192.168.10.1' WAZUH_AGENT_GROUP='Windows' WAZUH_AGENT_NAME='win11' 
+
+#Iniciar o agente
+
+NET START Wazuh
